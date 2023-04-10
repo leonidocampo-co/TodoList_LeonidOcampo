@@ -8,15 +8,19 @@ const Home = () => {
   const	[task, setTask]=useState("");
   const	[todos, setTodos]=useState(["Tarea 1", "Tarea 2"]);
 
+
   function addTask(e){
 	console.log(e.code)
-	if(e.code=="ENTER"){
-
-	}	
-  }
+	 if(e.code=="Enter"){
+	  setTodos([...todos, task])
+	  setTask("")
+  	  }
+	}
 
   function deltask(index){
-
+	let newTodos=[...todos]
+	newTodos.splice(index,1)
+	setTodos(newTodos)
   }
 
 	return (
@@ -30,6 +34,7 @@ const Home = () => {
 					value={task}	
 					onChange={(e)=>setTask(e.target.value)}
 					onKeyDown={addTask}
+					
 					/>
 				</div>
 				<ul className="list-group list-group-flush">
@@ -41,7 +46,7 @@ const Home = () => {
 				  }	
 				</ul>
 				<div className="card-footer">
-   				 	Card footer
+				  
   				</div>
 			</div>
 		</div>
