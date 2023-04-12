@@ -45,8 +45,8 @@ const Home = () => {
 					</li>))
 				  }	
 				</ul>
-				<div className="card-footer">
-				  
+				<div className="card-footer text-start">
+				  {"Remaining task: "+todos.length}
   				</div>
 			</div>
 		</div>
